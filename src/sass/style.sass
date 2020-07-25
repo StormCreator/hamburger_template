@@ -1,0 +1,85 @@
+*
+    padding: 0
+    margin: 0
+    
+.hamburger
+    position: absolute
+    height: 100%
+    right: 20px
+    top: 0
+    transform: translateY(50%) 
+    display: block
+    .hamburger-btn
+        display: flex
+        --box-shadow-color: rgba(255, 101, 47, 0.2)
+        width: 30px
+        height: 10px
+        position: relative
+        justify-content: center
+        align-items: center
+        cursor: pointer
+        transition: all 0.5s ease-in-out
+        &__burger,
+        &__burger::before,
+        &__burger::after
+            width: 30px
+            height: 5px
+            border-radius: 5px
+            background-color: #fff
+            box-shadow: 0 2px 5px var(--box-shadow-color)
+            transition: all 0.5s ease-in-out
+        &__burger::before,
+        &__burger::after 
+            content: ""
+            position: absolute
+        &__burger::before 
+            transform: translateY(-10px)
+        &__burger::after 
+            transform: translateY(10px)
+        .open
+            transform: translateX(-50px)
+            background-color: transparent
+            box-shadow: none
+            &::before 
+                transform: rotate(45deg) translate(35px, -35px)
+            &::after 
+                transform: rotate(-45deg) translate(35px, 35px)
+
+            
+header
+    position: relative
+    width: 100%
+    padding: 30px 0
+    background-color: grey
+    ul
+        width: 0
+        overflow: hidden
+        display: flex
+        list-style-type: none
+        padding: 0
+        margin: 0
+        li
+            margin-right: 10px
+            &:last-child
+                margin-right: 0
+            a
+                color: #ffffff
+                text-decoration: none
+
+
+.mobile__menu
+    display: block
+    position: absolute
+    width: 100%
+    left: 0
+    top: 60px
+    text-align: center
+    background-color: rgba(16,22,54,.2)
+    padding: 15px 0
+    overflow: visible
+    transition: .5s all
+    ul
+        width: 100%
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-around
